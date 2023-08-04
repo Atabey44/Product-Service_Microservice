@@ -17,7 +17,7 @@ public class CampaignController {
     }
 
     @GetMapping("/{productId}")
-    public ResponseEntity<CampaignDto> getCampaignByProductId(@PathVariable int productId){
+    public ResponseEntity<CampaignDto> getCampaignByProductId(@PathVariable Long productId){
         return ResponseEntity.ok(campaignService.getCampaignByProductId(productId));
     }
 

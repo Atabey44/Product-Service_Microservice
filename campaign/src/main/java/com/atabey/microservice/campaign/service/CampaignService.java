@@ -25,7 +25,7 @@ public class CampaignService {
     }
 
 
-    public CampaignDto getCampaignByProductId(int productId){
+    public CampaignDto getCampaignByProductId(Long productId){
        Campaign campaign = campaignRepository.findFirstByProductIdAndActive(productId, true).
                 orElseThrow(()-> new RuntimeException(""));
 
@@ -34,7 +34,7 @@ public class CampaignService {
 
     public CampaignDto createCampaign(CreateCampaignRequest createCampaignRequest){
         Campaign campaign = new Campaign();
-        campaign.setProductId(createCampaignRequest.getProductId());
+        campaign.setProductId((long) createCampaignRequest.getProductId());
         campaign.setSaleRate(createCampaignRequest.getSaleRate());
         campaign.setActive(true);
 

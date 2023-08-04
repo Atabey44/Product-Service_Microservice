@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="campaign_service")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,11 +16,13 @@ import javax.persistence.*;
 public class Campaign {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int productId;
+   @GeneratedValue
+    private Long id;
+    private Long productId;
     private Double saleRate;
-    private boolean isActive;
+
+    @Column(name="active_campaign")
+    private boolean active;
 
 
 }

@@ -8,7 +8,7 @@ public class CampaignDtoConvert {
 
         public CampaignDto convert (Campaign campaign){
             CampaignDto campaignDto = new CampaignDto();
-            campaignDto.setProductId(campaign.getProductId());
+            campaignDto.setProductId(Math.toIntExact(campaign.getProductId()));
             campaignDto.setSaleRate(campaign.getSaleRate());
 
             return campaignDto;
